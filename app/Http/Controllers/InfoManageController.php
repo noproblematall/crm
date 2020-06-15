@@ -21,35 +21,61 @@ class InfoManageController extends Controller
 
     public function get_energy_lead()
     {
-        $pagesize = 2;
+        $pagesize = 20;
         session(['page' => 'energy_lead']);
-        $leads = EnergyLead::orderBy('created_at', 'desc')->paginate($pagesize);
+        $leads = EnergyLead::where('type', true)->orderBy('created_at', 'desc')->paginate($pagesize);
         return view('energy_lead', compact('leads'));
     }
 
     public function get_energy_contact()
     {
+        $pagesize = 20;
         session(['page' => 'energy_contact']);
-        return view('energy_contact');
+        $contacts = EnergyLead::where('type', false)->orderBy('created_at', 'desc')->paginate($pagesize);
+        return view('energy_contact', compact('contacts'));
     }
 
-    public function energy_lead_delete($id)
+    public function energy_lead_delete(Request $request, $id)
     {
-        $lead = EnergyLead::find($id);
+        $lead = EnergyLead::where('id', $id)->where('type', true)->first();
         if(!$lead){
+            $request->seesion()->flash('error', 'The data does\'t exist in the database.');
             return back();
         }else{
             $lead->delete();
+            $request->seesion()->flash('success', 'The data has deleted successfully.');
+            return back();
         }
     }
 
     public function energy_lead_detail($id)
     {
-        $lead = EnergyLead::find($id);
+        $lead = EnergyLead::where('id', $id)->where('type', true)->first();
         if(!$lead){
             return back();
         }else{
             return view('energy_lead_detail', compact('lead'));
+        }
+    }
+
+    public function energy_contact_delete($id)
+    {
+        $contact = EnergyLead::where('id', $id)->where('type', false)->first();
+        if(!$contact){
+            return back();
+        }else{
+            $contact->delete();
+            return back();
+        }
+    }
+
+    public function energy_contact_detail($id)
+    {
+        $contact = EnergyLead::where('id', $id)->where('type', false)->first();
+        if(!$contact){
+            return back();
+        }else{
+            return view('energy_contact_detail', compact('contact'));
         }
     }
 }

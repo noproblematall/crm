@@ -29,6 +29,7 @@ class CreateEnergyLeadsTable extends Migration
             $table->string('energy_bill')->nullable();
             $table->string('more_info')->nullable();
             $table->string('area')->nullable();
+            $table->boolean('type')->default(true);
             $table->timestamps();
         });
     }

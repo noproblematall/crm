@@ -27,6 +27,19 @@
     @endphp
   <body>
     <div id="app">
+
+        @if(Session::has('success'))
+            <input type="hidden" name="" id="success_message" value="{{ Session::get('success') }}">
+        @else
+            <input type="hidden" name="" id="success_message" value="">
+        @endif
+        @if(Session::has('error'))
+            <input type="hidden" name="" id="error_message" value="{{ Session::get('error') }}">
+        @else
+            <input type="hidden" name="" id="error_message" value="">
+        @endif
+
+
         <!-- ########## START: LEFT PANEL ########## -->
         <div class="br-logo"><a href="#"><span>[</span>ECO <i>ENERGY</i><span>]</span></a></div>
         @include('layouts.sidebar')
