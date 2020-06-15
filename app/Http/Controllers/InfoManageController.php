@@ -39,11 +39,11 @@ class InfoManageController extends Controller
     {
         $lead = EnergyLead::where('id', $id)->where('type', true)->first();
         if(!$lead){
-            $request->seesion()->flash('error', 'The data does\'t exist in the database.');
+            $request->session()->flash('error', 'The data does\'t exist in the database.');
             return back();
         }else{
             $lead->delete();
-            $request->seesion()->flash('success', 'The data has deleted successfully.');
+            $request->session()->flash('success', 'The data has deleted successfully.');
             return back();
         }
     }
