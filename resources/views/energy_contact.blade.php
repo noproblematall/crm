@@ -67,3 +67,14 @@
 </div><!-- br-pagebody -->
 
 @endsection
+
+@section('script')
+    <script>
+        if($('#success_message').val() != ''){
+            toast_call('Success', $('#success_message').val(), false)
+        }
+        if($('#error_message').val() != ''){
+            toast_call('Error', $('#error_message').val(), false, 'error', 'red')
+        }
+    </script>
+@endsection
