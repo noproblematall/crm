@@ -62,9 +62,11 @@ class InfoManageController extends Controller
     {
         $contact = EnergyLead::where('id', $id)->where('type', false)->first();
         if(!$contact){
+            $request->session()->flash('error', 'The data does\'t exist in the database.');
             return back();
         }else{
             $contact->delete();
+            $request->session()->flash('success', 'The data has deleted successfully.');
             return back();
         }
     }
