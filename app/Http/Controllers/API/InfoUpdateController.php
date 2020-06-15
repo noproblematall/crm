@@ -15,6 +15,7 @@ class InfoUpdateController extends Controller
 
     public function energy_contact(Request $request)
     {
+        dd('hello');
         return response()->json($request->get('contact'));
     }
 }
