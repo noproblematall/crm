@@ -34,7 +34,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->phone }}</td>
-                                <td>{{ Helper::trim_sting($item->comment) }}</td>
+                                <td>{{ Helper::trim_string($item->comment) }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a href="{{ route('energy_contact_detail', $item->id) }}">&nbsp;<i class="fa fa-eye" style="color:#50aa5b;">&nbsp;</i></a>
