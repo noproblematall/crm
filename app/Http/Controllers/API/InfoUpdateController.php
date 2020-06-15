@@ -18,6 +18,7 @@ class InfoUpdateController extends Controller
         $lead->phone = $request->get('phone');
         $lead->comment = $request->get('comment');
         $lead->zip_code = $request->get('zip');
+        dd('ok');
         if ($request->get('apartment') == true) {
             $lead->home_type = 'apartment';
         }else if ($request->get('house') == true) {
