@@ -10,11 +10,11 @@ class InfoUpdateController extends Controller
     
     public function energy_lead(Request $request)
     {
-        return response()->json($request->get('leads'));
+        return response()->json($request->all());
     }
 
     public function energy_contact(Request $request)
     {
-        return response()->json($request->get('contact'));
+        return response()->json($request->all());
     }
 }
