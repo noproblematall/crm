@@ -18,7 +18,6 @@ class InfoUpdateController extends Controller
         $lead->phone = $request->get('phone');
         $lead->comment = $request->get('comment');
         $lead->zip_code = $request->get('zip');
-        dd('ok');
         if ($request->get('apartment') == true) {
             $lead->home_type = 'apartment';
         }else if ($request->get('house') == true) {
@@ -38,7 +37,7 @@ class InfoUpdateController extends Controller
         $lead->isolate = $request->get('roof_value');
         $lead->more_info = $request->get('more_value');
         $lead->area = $request->get('area');
-        $lead->bill = $request->get('bill_value');
+        $lead->energy_bill = $request->get('bill_value');
         $lead->want_work = implode(',', $request->get('accom_value'));
         $lead->save();
 
