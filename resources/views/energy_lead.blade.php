@@ -70,7 +70,6 @@
 
 @section('script')
     <script>
-        $('#booking').DataTable();
         if($('#success_message').val() != ''){
             toast_call('Success', $('#success_message').val(), false)
         }
