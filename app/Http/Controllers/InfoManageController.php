@@ -58,7 +58,7 @@ class InfoManageController extends Controller
         }
     }
 
-    public function energy_contact_delete($id)
+    public function energy_contact_delete(Request $request, $id)
     {
         $contact = EnergyLead::where('id', $id)->where('type', false)->first();
         if(!$contact){
