@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://ecoenergie.io/*'],
+    'allowed_origins' => ['https://ecoenergie.io', 'https://ecoenergie.io/#start_form'],
 
     'allowed_origins_patterns' => [],
 
