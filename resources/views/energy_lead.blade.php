@@ -31,11 +31,11 @@
                         @forelse ($leads as $item)
                             <tr>
                                 <td>{{ (($leads->currentPage() - 1 ) * $leads->perPage() ) + $loop->iteration }}</td>
-                                <td>{{ $leads->name }}</td>
-                                <td>{{ $leads->email }}</td>
-                                <td>{{ $leads->phone }}</td>
-                                <td>{{ $leads->zip_code }}</td>
-                                <td>{{ $leads->created_at }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->phone }}</td>
+                                <td>{{ $item->zip_code }}</td>
+                                <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a href="{{ route('energy_lead_detail', $item->id) }}">&nbsp;<i class="fa fa-eye" style="color:#50aa5b;">&nbsp;</i></a>
                                     <a href="{{ route('energy_lead_delete', $item->id) }}">&nbsp;<i class="fa fa-trash" style="color:red;">&nbsp;</i></a>
