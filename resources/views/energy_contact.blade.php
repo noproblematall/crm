@@ -30,7 +30,7 @@
                     <tbody>
                         @forelse ($contacts as $item)
                             <tr>
-                                <td>{{ (($leads->currentPage() - 1 ) * $leads->perPage() ) + $loop->iteration }}</td>
+                                <td>{{ (($contacts->currentPage() - 1 ) * $contacts->perPage() ) + $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->phone }}</td>
