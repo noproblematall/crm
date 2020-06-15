@@ -41,7 +41,7 @@ class InfoUpdateController extends Controller
         $lead->want_work = implode(',', $request->get('accom_value'));
         $lead->save();
 
-        return response('ok', 200);
+        return response(['data' => 'ok'], 200);
     }
 
     public function energy_contact(Request $request)
