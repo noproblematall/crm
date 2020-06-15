@@ -51,6 +51,14 @@ class InfoUpdateController extends Controller
 
     public function energy_contact(Request $request)
     {
-        return response()->json($request->all());
+        $lead = new EnergyLead();
+        $lead->name  = $request->get('name');
+        $lead->email = $request->get('email');
+        $lead->phone = $request->get('phone');
+        $lead->comment = $request->get('comment');
+        $lead->type = false;
+        $lead->save();
+        
+        return response(['data' => 'ok'], 200);
     }
 }

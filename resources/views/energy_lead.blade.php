@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="br-pagetitle">
-    <i class="icon ion-ios-home-outline tx-70 lh-0"></i>
+    <i class="icon ion-ios-email-outline tx-70 lh-0"></i>
     <div>
-    <h4>Dashboard</h4>
+    <h4>Leads Info</h4>
     <p class="mg-b-0">You can see the lead info of ecoenergy.io here.</p>
     </div>
 </div><!-- d-flex -->
