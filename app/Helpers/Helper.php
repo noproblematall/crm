@@ -12,7 +12,7 @@ class Helper
 
     public static function trim_string(String $value)
     {
-        if ($value.strlen() > 20) {
+        if (strlen($value) > 20) {
             return (substr($value, 0, 20)).'...';
         }else{
             return $value;
