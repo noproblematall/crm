@@ -38,7 +38,12 @@ class InfoUpdateController extends Controller
         $lead->more_info = $request->get('more_value');
         $lead->area = $request->get('area');
         $lead->energy_bill = $request->get('bill_value');
-        $lead->want_work = implode(',', $request->get('accom_value'));
+        if ($request->get('accom_value') == null) {
+            $lead->want_work = '';
+        }else{
+            $lead->want_work = implode(',', $request->get('accom_value'));
+
+        }
         $lead->save();
 
         return response(['data' => 'ok'], 200);
