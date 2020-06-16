@@ -92,7 +92,7 @@ class InfoManageController extends Controller
     {
         $pagesize = 20;
         session(['page' => 'energy_question']);
-        $questions = Question::where('type', 'energy_home')->orWhere('type', 'energy_about')->orderBy('created_at', 'asc')->paginate($pagesize);
+        $questions = Question::where('type', 'energy_home')->orWhere('type', 'energy_about')->orderBy('created_at', 'desc')->paginate($pagesize);
         return view('energy_question', compact('questions'));
     }
 
