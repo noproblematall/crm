@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('content')->nullable();
-            $table->string('type')->nulllable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
