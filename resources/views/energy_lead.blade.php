@@ -1,12 +1,27 @@
 @extends('layouts.app')
-
+@section('css')
+<style>
+    .custome_flex {
+        display: flex;
+        align-items: center;
+    }
+    .br-pagetitle {
+        justify-content: space-between;
+    }
+</style>
+@endsection
 @section('content')
 
 <div class="br-pagetitle">
-    <i class="icon ion-ios-email-outline tx-70 lh-0"></i>
-    <div>
-    <h4>Leads Info</h4>
-    <p class="mg-b-0">You can see the lead info of ecoenergy.io here.</p>
+    <div class="custome_flex">
+        <i class="icon ion-ios-email-outline tx-70 lh-0"></i>
+        <div class="mg-l-20">
+            <h4>Leads Info</h4>
+            <p class="mg-b-0">You can see the lead info of ecoenergy.io here.</p>
+        </div>
+    </div>
+    <div class="export_csv">
+        <button class="btn btn-primary btn-sm mr-4" id="export_csv">Export CSV</button>
     </div>
 </div><!-- d-flex -->
 
@@ -67,8 +82,8 @@
 </div><!-- br-pagebody -->
 
 @endsection
-
 @section('script')
+<script src="{{ asset('lib/sheetjs/dist/xlsx.full.min.js') }}"></script>
     <script>
         if($('#success_message').val() != ''){
             toast_call('Success', $('#success_message').val(), false)
@@ -76,5 +91,26 @@
         if($('#error_message').val() != ''){
             toast_call('Error', $('#error_message').val(), false, 'error', 'red')
         }
+
+        $('#export_csv').click(function(){
+            $.ajax({
+                url: '/get_energy_leads_all',
+                type: 'get',
+                beforeSend: function () { $('.loader_container').removeClass('display_none'); },
+                success: function(data){
+                    // var info = JSON.parse(data)
+                    console.log(data);
+                    var wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(data), 'Leads Info')
+                    XLSX.writeFile(wb, 'Info.xlsx')
+                    $('.loader_container').removeClass('display_none');
+                },
+                error: function(){
+                    $('.loader_container').addClass('display_none');
+                }
+            }).done(function () {
+                $('.loader_container').addClass('display_none');
+            })
+        })
     </script>
 @endsection

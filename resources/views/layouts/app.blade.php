@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('lib/spinkit/css/spinkit.css')}}">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <link href="{{ asset('lib/jquery_toast/jquery.toast.min.css') }}" rel="stylesheet">
+    @yield('css')
   </head>
     @php
         $user = auth()->user();

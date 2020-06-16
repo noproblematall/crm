@@ -27,6 +27,12 @@ class InfoManageController extends Controller
         return view('energy_lead', compact('leads'));
     }
 
+    public function get_energy_leads_all()
+    {
+        $info = EnergyLead::select('name', 'email', 'phone', 'zip_code', 'comment', 'home_type', 'manager_type', 'energy_type', 'resident_number', 'isolate', 'want_work', 'energy_bill', 'more_info', 'area', 'created_at')->orderBy('created_at','desc')->get();
+        return response()->json($info);
+    }
+
     public function get_energy_contact()
     {
         $pagesize = 20;
