@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/mycrm', 'HomeController@index')->name('home');
 Route::get('/password', 'HomeController@change_password')->name('password');
 Route::post('/profile', 'HomeController@change_profile')->name('profile');
 
