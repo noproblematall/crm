@@ -105,7 +105,7 @@ class InfoManageController extends Controller
     {
         $title = $request->get('title');
         $content = $request->get('content');
-        $type = $request->get('question');
+        $type = $request->get('type');
         $question = new Question();
         $question->title = $title;
         $question->content = $content;
