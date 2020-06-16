@@ -29,10 +29,10 @@
                         <textarea rows="8" class="form-control is-valid mg-t-20" name="content" id="content" placeholder="content"></textarea>
                     </div>
                     <label class="rdiobox rdiobox-success mg-t-15">
-                        <input type="radio" name="type" value="energy_home" checked><span>Home page</span>
+                        <input type="radio" name="type" value="energy_home" id="home_page"><span>Home page</span>
                     </label>
                     <label class="rdiobox rdiobox-success mg-t-15">
-                        <input type="radio" name="type" value="energy_home"><span>About page</span>
+                        <input type="radio" name="type" value="energy_home" id="about_page"><span>About page</span>
                     </label>
                     <br>
                     <button class="btn btn-primary" id="save_question">S&nbsp;&nbsp;A&nbsp;&nbsp;V&nbsp;&nbsp;E</button>
@@ -60,6 +60,10 @@
                 if (content == '') {
                     $('p#error_message').html('Please enter the content for new question');
                     $('#content').focus()
+                    return;
+                }
+                if (!$('#home_page').prop('checked') && !$('#about_page').prop('checked')) {
+                    $('p#error_message').html('Please select page type');
                     return;
                 }
                 $('#add_question').submit()
