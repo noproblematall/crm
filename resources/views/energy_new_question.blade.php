@@ -32,7 +32,7 @@
                         <input type="radio" name="type" value="energy_home" id="home_page"><span>Home page</span>
                     </label>
                     <label class="rdiobox rdiobox-success mg-t-15">
-                        <input type="radio" name="type" value="energy_type" id="about_page"><span>About page</span>
+                        <input type="radio" name="type" value="energy_about" id="about_page"><span>About page</span>
                     </label>
                     <br>
                     <button class="btn btn-primary" id="save_question">S&nbsp;&nbsp;A&nbsp;&nbsp;V&nbsp;&nbsp;E</button>
