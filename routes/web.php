@@ -31,3 +31,9 @@ Route::get('energy_lead_detail/{id}', 'InfoManageController@energy_lead_detail')
 Route::get('energy_lead_delete/{id}', 'InfoManageController@energy_lead_delete')->name('energy_lead_delete')->where('id', '^\d+$');
 Route::get('energy_contact_detail/{id}', 'InfoManageController@energy_contact_detail')->name('energy_contact_detail')->where('id', '^\d+$');
 Route::get('energy_contact_delete/{id}', 'InfoManageController@energy_contact_delete')->name('energy_contact_delete')->where('id', '^\d+$');
+Route::get('energy_question', 'InfoManageController@energy_question')->name('energy_question');
+Route::get('energy_new_question', 'InfoManageController@energy_new_question')->name('energy_new_question');
+Route::post('energy_question_add', 'InfoManageController@energy_question_add')->name('energy_question_add');
+Route::post('energy_question_update', 'InfoManageController@energy_question_update')->name('energy_question_update');
+Route::get('energy_question_edit/{id}', 'InfoManageController@energy_question_edit')->name('energy_question_edit')->where('id', '^\d+$');
+Route::get('energy_question_delete/{id}', 'InfoManageController@energy_question_delete')->name('energy_question_delete')->where('id', '^\d+$');

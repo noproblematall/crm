@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\EnergyLead;
+use App\Question;
 
 class InfoUpdateController extends Controller
 {
@@ -60,5 +61,17 @@ class InfoUpdateController extends Controller
         $lead->save();
         
         return response(['data' => 'ok'], 200);
+    }
+
+    public function energy_question_home()
+    {
+        $questions = Question::where('type', 'energy_home')->orderBy('created_at', 'desc')->get();
+        return response()->json($questions);
+    }
+
+    public function energy_question_about()
+    {
+        $questions = Question::where('type', 'energy_about')->orderBy('created_at', 'desc')->get();
+        return response()->json($questions);
     }
 }

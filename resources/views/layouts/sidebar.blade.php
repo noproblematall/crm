@@ -3,6 +3,7 @@
     $ecoenergie_item = [
         'energy_lead',
         'energy_contact',
+        'energy_question',
     ];
 @endphp
 
@@ -24,6 +25,7 @@
         <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{ route('energy_lead') }}" class="sub-link {{ $page == 'energy_lead' ? 'active' : null }}">Leads Info</a></li>
             <li class="sub-item"><a href="{{ route('energy_contact') }}" class="sub-link {{ $page == 'energy_contact' ? 'active' : null }}">Contact Info</a></li>
+            <li class="sub-item"><a href="{{ route('energy_question') }}" class="sub-link {{ $page == 'energy_question' ? 'active' : null }}">Questions</a></li>
         </ul>
         </li>        
     </ul><!-- br-sideleft-menu -->      

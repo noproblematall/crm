@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\EnergyLead;
+use App\Question;
 
 class InfoManageController extends Controller
 {
@@ -84,6 +85,73 @@ class InfoManageController extends Controller
             return back();
         }else{
             return view('energy_contact_detail', compact('contact'));
+        }
+    }
+
+    public function energy_question()
+    {
+        $pagesize = 20;
+        session(['page' => 'energy_question']);
+        $questions = Question::where('type', 'energy_home')->orWhere('type', 'energy_about')->orderBy('created_at', 'asc')->paginate($pagesize);
+        return view('energy_question', compact('questions'));
+    }
+
+    public function energy_new_question()
+    {
+        return view('energy_new_question');
+    }
+
+    public function energy_question_add(Request $request)
+    {
+        $title = $request->get('title');
+        $content = $request->get('content');
+        $type = $request->get('question');
+        $question = new Question();
+        $question->title = $title;
+        $question->content = $content;
+        $question->type = $type;
+        $question->save();
+        $request->session()->flash('success', 'The question has saveed successfully.');
+        return redirect()->route('energy_question');
+    }
+
+    public function energy_question_edit(Request $request, $id)
+    {
+        $question = Question::find($id);
+        if(!$question){
+            return back();
+        }else{
+            return view('energy_question_detail', compact('question'));
+        }
+    
+    }
+
+    public function energy_question_update(Request $request)
+    {
+        $id = $request->get('id');
+        $question = Question::find($id);
+        if(!$question){
+            return back();
+        }else{
+            $question->title = $request->get('title');
+            $question->content = $request->get('content');
+            $question->type = $request->get('type');
+            $question->save();
+            $request->session()->flash('success', 'The question has updateed successfully.');
+            return redirect()->route('energy_question');
+        }
+    
+    }
+    public function energy_question_delete(Request $request, $id)
+    {
+        $question = Question::find($id);
+        if(!$question){
+            $request->session()->flash('error', 'The question does\'t exist in the database.');
+            return back();
+        }else{
+            $question->delete();
+            $request->session()->flash('success', 'The question has deleted successfully.');
+            return back();
         }
     }
 }
