@@ -34,8 +34,7 @@
                     <span class="tx-primary">Created Date</span>: {{ $lead->created_at }}
                 </p>
                 <p>
-                    <span class="tx-primary">Comment</span>: 
-                    <p>{{ $lead->comment }}</p>
+                    <span class="tx-primary">Amount You would like to invest</span>: {{ $lead->comment }}
                 </p>
             </div>
             <div class="col-md-6">
