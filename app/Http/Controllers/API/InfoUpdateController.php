@@ -20,16 +20,16 @@ class InfoUpdateController extends Controller
         $lead->comment = $request->get('comment');
         $lead->zip_code = $request->get('zip');
         if ($request->get('apartment') == true) {
-            $lead->home_type = 'apartment';
+            $lead->home_type = 'Apartment';
         }else if ($request->get('house') == true) {
-            $lead->home_type = 'home';
+            $lead->home_type = 'Maison';
         }else{
             $lead->home_type = '';
         }
         if ($request->get('landlord') == true) {
-            $lead->manager_type = 'landlord';
+            $lead->manager_type = 'Propriétaire';
         }else if ($request->get('tenant') == true) {
-            $lead->manager_type = 'tenant';
+            $lead->manager_type = 'Locataire';
         }else{
             $lead->manager_type = '';
         }
