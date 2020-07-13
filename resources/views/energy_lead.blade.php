@@ -34,12 +34,12 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>phone number</th>
-                            <th>zip code</th>
-                            <th>created_at</th>
-                            <th>action</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Tel</th>
+                            <th>Departement</th>
+                            <th>Cree</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
