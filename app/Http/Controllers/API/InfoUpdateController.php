@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\EnergyLead;
 use App\Question;
+use App\BienvestirLead;
 
 class InfoUpdateController extends Controller
 {
@@ -73,5 +74,38 @@ class InfoUpdateController extends Controller
     {
         $questions = Question::where('type', 'energy_about')->orderBy('created_at', 'desc')->get();
         return response()->json($questions);
+    }
+
+    public function bienvestir_lead(Request $request)
+    {
+        $lead = new BienvestirLead();
+        $lead->age = $request->get('age');
+        $lead->financial = $request->get('financial');
+        $lead->prospect = $request->get('prospect');
+        $lead->friend = $request->get('friend');
+        $lead->vacation = $request->get('vacation');
+        $lead->risk = $request->get('risk');
+        $lead->game = $request->get('game');
+        $lead->investment = $request->get('level');
+        $lead->prefer = $request->get('case');
+        $lead->diversification = $request->get('diversification');
+        $lead->name = $request->get('name');
+        $lead->phone = $request->get('phone');
+        $lead->email = $request->get('email');
+        $lead->save();
+        return response(['data' => 'ok'], 200);
+    }
+
+    public function bienvestir_contact(Request $request)
+    {
+        $lead = new BienvestirLead();
+        $lead->name  = $request->get('name');
+        $lead->email = $request->get('email');
+        $lead->phone = $request->get('phone');
+        $lead->comment = $request->get('comment');
+        $lead->type = false;
+        $lead->save();
+        
+        return response(['data' => 'ok'], 200);
     }
 }

@@ -22,3 +22,6 @@ Route::post('energy_lead', 'API\InfoUpdateController@energy_lead');
 Route::post('energy_contact', 'API\InfoUpdateController@energy_contact');
 Route::get('energy_question_home', 'API\InfoUpdateController@energy_question_home');
 Route::get('energy_question_about', 'API\InfoUpdateController@energy_question_about');
+
+Route::post('bienvestir_lead', 'API\InfoUpdateController@bienvestir_lead');
+Route::post('bienvestir_contact', 'API\InfoUpdateController@bienvestir_contact');
