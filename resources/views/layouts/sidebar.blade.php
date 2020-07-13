@@ -35,7 +35,7 @@
         <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ $page == in_array($page, $bie_item) ? 'active show-sub' : null }}">
                 <i class="menu-item-icon fa fa-leaf tx-18"></i>
-                <span class="menu-item-label">bienvestir.io</span>
+                <span class="menu-item-label">bienvestir.com</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
                 <li class="sub-item"><a href="{{ route('bie_lead') }}" class="sub-link {{ $page == 'bie_lead' ? 'active' : null }}">Leads Info</a></li>

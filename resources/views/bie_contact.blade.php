@@ -6,7 +6,7 @@
     <i class="icon ion-chatbubble-working tx-70 lh-0"></i>
     <div>
         <h4>Contacts</h4>
-        <p class="mg-b-0">You can see the contact info of ecoenergy.io here.</p>
+        <p class="mg-b-0">You can see the contact info of bienvestir.com here.</p>
     </div>
 </div><!-- d-flex -->
 

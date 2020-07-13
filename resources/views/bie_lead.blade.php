@@ -17,7 +17,7 @@
         <i class="icon ion-ios-email-outline tx-70 lh-0"></i>
         <div class="mg-l-20">
             <h4>Leads Info</h4>
-            <p class="mg-b-0">You can see the lead info of bienvestir.io here.</p>
+            <p class="mg-b-0">You can see the lead info of bienvestir.com here.</p>
         </div>
     </div>
     <div class="export_csv">

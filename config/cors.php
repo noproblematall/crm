@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://ecoenergie.io', 'https://ecoenergie.io/#start_form', 'https://ecoenergie.io/contact-us', 'https://ecoenergie.io/about'],
+    'allowed_origins' => ['https://ecoenergie.io', 'https://ecoenergie.io/#start_form', 'https://ecoenergie.io/contact-us', 'https://ecoenergie.io/about', 'https://bienvestir.com', 'https://bienvestir.com/#test', 'https://bienvestir.com/contact-us'],
 
     'allowed_origins_patterns' => [],
 
